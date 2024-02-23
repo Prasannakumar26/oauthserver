@@ -1,0 +1,17 @@
+server:
+  port: 8089
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          demo-client:
+            client-id: demo
+            client-secret: secret
+            authorization-grant-types: authorization_code,client_credentials,refresh_token
+            redirect-uri: http://localhost:8082/login/oauth2/code/demo-client
+            scope: user.read,user.write,openid
+            client-authentication-method: client_secret_basic
+
+
